@@ -1,3 +1,5 @@
+package Simulation.Particle;
+
 import java.awt.*;
 
 public class Particle {
@@ -15,6 +17,14 @@ public class Particle {
 
     public void setColor( Color color ){
         this.color = color;
+    }
+
+    public double getX(){
+        return position.getX();
+    }
+
+    public double getY(){
+        return position.getY();
     }
 
     public Color getColor(){

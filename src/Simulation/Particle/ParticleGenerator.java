@@ -1,3 +1,7 @@
+package Simulation.Particle;
+
+import Simulation.Surface;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,9 +31,9 @@ public class ParticleGenerator {
         return new Vector2D(x,y);
     }
 
-   public static ArrayList<Particle> generateParticles( Surface surface, int n ){
+   public static ArrayList<Particle> generateParticles(Surface surface, int n ){
 
-       ArrayList<Particle> particles = new ArrayList<Particle>();
+       ArrayList<Particle> particles = new ArrayList();
        for( int i = 0; i < n; i++){
           Vector2D position = getRandomVector(surface);
           Vector2D speed = getRandomSpeed();

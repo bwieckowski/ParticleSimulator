@@ -1,3 +1,5 @@
+package Simulation.Particle;
+
 public class Vector2D {
 
     private double x;
@@ -42,5 +44,5 @@ public class Vector2D {
         v1.x = this.x + v.getX();
         v1.y = this.y + v.getY();
         return v1;
-    };
+    }
 }

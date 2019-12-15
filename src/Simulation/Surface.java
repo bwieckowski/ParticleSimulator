@@ -1,3 +1,5 @@
+package Simulation;
+
 public class Surface {
 
     private int height;

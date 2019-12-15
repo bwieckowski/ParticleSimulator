@@ -5,8 +5,7 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args) {
-
-      Simulation simulation = new Simulation();
-
+        ViewManager vm = ViewManager.getManager();
+        vm.setView(new MainView().getView(), "Symulacja");
     }
 }
