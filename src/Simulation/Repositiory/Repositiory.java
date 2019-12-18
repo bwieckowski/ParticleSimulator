@@ -1,10 +1,12 @@
 package Simulation.Repositiory;
 
+import Simulation.Memento.State;
 import Simulation.Particle.Particle;
 import Simulation.Particle.ParticleGenerator;
 import Simulation.Surface;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Repositiory {
 
@@ -15,17 +17,26 @@ public class Repositiory {
 
     }
 
+    public void loadStates( List<State> statesList ) {
+        int i = 0;
+        for( State state : statesList) {
+            list.get(i).setState(state);
+            i++;
+        }
+    }
+
+    public List<State> getStatesList() {
+        List<State> stateList = new ArrayList<>();
+        for( Particle particle : list){
+            stateList.add(particle.createMemento());
+        }
+        return stateList;
+    }
+
     public Particle get(int id){
         return this.list.get(id);
     }
 
-    public ArrayList<Particle> getAll(){
-        return list;
-    }
-
-    public void push( Particle Particle ) {
-        this.list.add(Particle);
-    }
 
     public Iterator getIterator(){
         return new Iterator(this);
@@ -37,15 +48,6 @@ public class Repositiory {
 
     public int size(){
         return list.size();
-    }
-    public void remove( Particle Particle ) {
-        this.list.remove(Particle);
-    }
-
-    public void showItems() {
-        for ( Particle item : list) {
-            System.out.println(item.toString());
-        }
     }
 
 }

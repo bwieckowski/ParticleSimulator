@@ -1,6 +1,8 @@
 package Simulation.Particle;
 
-public class Vector2D {
+import java.io.Serializable;
+
+public class Vector2D implements Serializable {
 
     private double x;
     private double y;

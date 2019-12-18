@@ -1,6 +1,10 @@
 package Simulation.Particle;
 
+import Simulation.Memento.State;
+
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Particle {
 
@@ -25,6 +29,24 @@ public class Particle {
 
     public double getY(){
         return position.getY();
+    }
+
+    public State createMemento(){
+        Map<String,Object> stateMap = new HashMap<>();
+        stateMap.put("position", position);
+        stateMap.put("speed", speed);
+        stateMap.put("color", color);
+        stateMap.put("radius",radius);
+        return new State(stateMap);
+    }
+
+    public void setState( State state){
+        Map<String,Object> stateMap = (Map<String,Object>) state.getState();
+        this.color = (Color) stateMap.get("color");
+        this.speed = (Vector2D) stateMap.get("speed");
+        this.position = (Vector2D) stateMap.get("position");
+        this.radius = (double) stateMap.get("radius");
+
     }
 
     public Color getColor(){

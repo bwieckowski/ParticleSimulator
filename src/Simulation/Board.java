@@ -15,7 +15,7 @@ public class Board extends JPanel implements Observator {
 
     public Board(Surface surface, Repositiory repositiory){
         this.repositiory = repositiory;
-        setPreferredSize(new Dimension(surface.getWidth(), surface.getHeight()));
+        setPreferredSize(new Dimension(surface.getWidth()+17, surface.getHeight()+17));
         setBackground(new Color(90, 255, 79) );
     }
 
